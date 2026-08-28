@@ -411,3 +411,44 @@ img{display:block;max-width:100%}
   .split{grid-template-columns:1fr}
   .split > .image-panel{max-width:760px; width:100%; margin-inline:auto}
 }
+
+
+.fee-list{
+  display:grid;
+  gap:0;
+  border:1px solid rgba(20,33,38,.08);
+  border-radius:24px;
+  overflow:hidden;
+  background:rgba(255,255,255,.92);
+  box-shadow:var(--shadow-soft);
+}
+.fee-row{
+  display:grid;
+  grid-template-columns:minmax(0,1.35fr) minmax(160px,.65fr);
+  align-items:center;
+}
+.fee-row + .fee-row{border-top:1px solid var(--line-2)}
+.fee-distance,
+.fee-price{
+  padding:18px 20px;
+  min-width:0;
+}
+.fee-distance{
+  background:#fbf8f2;
+  color:#52615c;
+  font-weight:800;
+}
+.fee-price{
+  background:rgba(255,255,255,.96);
+  text-align:right;
+  font-weight:800;
+  color:var(--ink);
+  font-variant-numeric:tabular-nums;
+}
+.fee-price strong{font-weight:900}
+
+@media (max-width:640px){
+  .fee-row{grid-template-columns:1fr}
+  .fee-distance{padding-bottom:10px}
+  .fee-price{text-align:left;padding-top:0;padding-bottom:18px}
+}
